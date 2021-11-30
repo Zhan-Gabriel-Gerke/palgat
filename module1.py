@@ -48,7 +48,7 @@ def loe_failist_listisse(file:str)->list:
         list_.append(stroka.strip())
     file.close()
     return list_
-def keskmine():
+def keskmine(p,i):
 	"""Kasmise palka leidmine. Kui ta on loetelus, siis näitame kes saab seda kätte
 	:rtype var:
 	"""

@@ -8,8 +8,9 @@ while True:
 	elif a=="2":
 		delete_person()
 	elif a=="3":
-		 keskmine()
+		 bbb=keskmine(p,i)
+		 print(bbb)
 	elif a=="4":
-		suurim_palk(i,p)
+		suurim_palk()
 	else:
 		break
