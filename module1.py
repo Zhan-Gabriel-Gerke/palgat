@@ -72,3 +72,12 @@ def suurim(i:list,p:list):
     b=p.index(suurim)
     kellel=i[b]
     return suurim , kellel
+def smallest_salary(a,b):
+	"""väikseima palga arvutamine
+	"""
+	palgad,inimesed=lists()
+	palgadS=palgad.copy()
+	palgadS.sort()
+	a=palgadS[0]
+	b=palgad.index(a)
+	print(" "+inimesed[b]+" palga ja see on "+ palgadS[0]+" euro")
