@@ -81,3 +81,4 @@ def smallest_salary(a,b):
 	a=palgadS[0]
 	b=palgad.index(a)
 	print(" "+inimesed[b]+" palga ja see on "+ palgadS[0]+" euro")
+#Почему 3 и 4 не работает я сам не понимаю я 3 и 4 списал с доски но почему-то они не робят
