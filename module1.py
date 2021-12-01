@@ -1,5 +1,5 @@
 def add_person ():
-	"""inimese ja palga lisamine
+	"""see funktsioon lisab loendisse isiku nime ja palga
 	"""
 	nimi=input("Siseta nimi: ")
 	palga=input("Siseta palgad: ")
@@ -8,7 +8,7 @@ def add_person ():
 	with open("TextFile2.txt", "a") as palgad:
 		palgad.write(palga+"\n")
 def delete_person ():
-	"""Isiku ja palga eemaldamine,Удаление человека и зарплаты 
+	"""see funktsioon eemaldab nimekirjast isiku ja tema palga 
 	"""
 	f=open("TextFile1.txt", "r")
 	inimesed=[]
@@ -17,7 +17,7 @@ def delete_person ():
 	f.close
 	nimi=input("Siseta nimi: ")
 	if nimi not in inimesed:
-		print("Kas sa tahad lisama nimi ja palgad/?")
+		print("Soovite lisada nime ja palga/?")
 		c=input("Y = jah, N = ei")
 		if c.upper=="Y":
 			add_person()
@@ -48,26 +48,27 @@ def loe_failist_listisse(file:str)->list:
         list_.append(stroka.strip())
     file.close()
     return list_
-def keskmine(p,i):
-	"""Kasmise palka leidmine. Kui ta on loetelus, siis näitame kes saab seda kätte
-	:rtype var:
-	"""
+def keskmine(i:list,p:list):
+    """Keskmise palka leidmine. Kui ta on loetelus, siis näiame kes saab seda kätte
+    :rtype var:
+    """
     summa=0
     for palga in p:
-        summa+=palga
-	kesk=summa/len(p)
-	print(kesk)
-	vahe=0
-	if 0<=p.index(kesk)<len(p)-1:
-		kesk=i[p.index(kesk)]
-		return kesk
-	else:
-		kesk="Puudunud"
-		return kesk
-def suurim_palk(i,p):
-	suurim=max(p)
-	b=p.index(suurim)
-	kellel=i[b]
-	print(suurim)
-	print(kellel)
-	return suurim,kellel
+        summa+=p
+    kesk=summa/len(p)
+    print(kesk)
+    vahe=0
+    if 0<=p.index(kesk)<len(p)-1:
+        kesk=i[p.index(kesk)]
+        return kesk
+    else:
+        kesk="Puudunud"
+        return kesk
+def suurim(i:list,p:list):
+    """
+    :rtype: str,str:
+    """
+    suurim=max(p)
+    b=p.index(suurim)
+    kellel=i[b]
+    return suurim , kellel
