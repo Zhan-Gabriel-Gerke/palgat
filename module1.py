@@ -47,17 +47,16 @@ def loe_failist_listisse(file:str)->list:
     for stroka in file:
         list_.append(stroka.strip())
     file.close()
-    return list_
+    return list_ 
 def keskmine(i:list,p:list):
     """Keskmise palka leidmine. Kui ta on loetelus, siis näiame kes saab seda kätte
     :rtype var:
     """
     summa=0
     for palga in p:
-        summa+=p
+        summa+=int(palga)
     kesk=summa/len(p)
     print(kesk)
-    vahe=0
     if 0<=p.index(kesk)<len(p)-1:
         kesk=i[p.index(kesk)]
         return kesk
