@@ -1,4 +1,4 @@
-def add_person ():
+def add():
 	"""see funktsioon lisab loendisse isiku nime ja palga
 	"""
 	nimi=input("Siseta nimi: ")
@@ -7,7 +7,7 @@ def add_person ():
 		inimesed.write(nimi+"\n")	
 	with open("TextFile2.txt", "a") as palgad:# Lisame palk faili lõppu
 		palgad.write(palga+"\n")
-def delete_person ():
+def delete():
 	"""see funktsioon eemaldab nimekirjast isiku ja tema palga 
 	"""
 	f=open("TextFile1.txt", "r")
@@ -17,7 +17,7 @@ def delete_person ():
 	f.close
 	nimi=input("Siseta nimi: ")
 	if nimi not in inimesed: #kontrollitakse, kas on olemas selline inimene
-		print("Kas sa tahad lisada nime ja palga/?")kui inimene ei leitud registreeri oma
+		print("Kas sa tahad lisada nime ja palga/?")#kui inimene ei leitud registreeri oma
 		c=input("Y = jah, N = ei")
 		if c.upper=="Y":
 			add_person()
@@ -28,9 +28,9 @@ def delete_person ():
 		with open("TextFile2.txt", "r") as f1:
 			for stro in f1:
 				palgad.append(stro.strip())
-		a=inimesed.index(nimi)
-		inimesed.pop(a)
-		palgad.pop(a)
+		a=inimesed.index(nimi)#kui nimi on olemas, siis leidke indeks
+		inimesed.pop(a)#eemalda nimi
+		palgad.pop(a)#
 	f=open("TextFile1.txt", "w")
 	for g in inimesed:
 		f.write(g+"\n")
@@ -72,13 +72,4 @@ def suurim(i:list,p:list):
     b=p.index(suurim)
     kellel=i[b]
     return suurim , kellel
-def smallest_salary(a,b):
-	"""väikseima palga arvutamine
-	"""
-	palgad,inimesed=lists()
-	palgadS=palgad.copy()
-	palgadS.sort()
-	a=palgadS[0]
-	b=palgad.index(a)
-	print(" "+inimesed[b]+" palga ja see on "+ palgadS[0]+" euro")
 #Почему 3 и 4 не работает я сам не понимаю я 3 и 4 списал с доски но почему-то они не робят
