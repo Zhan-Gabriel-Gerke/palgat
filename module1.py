@@ -3,9 +3,9 @@ def add_person ():
 	"""
 	nimi=input("Siseta nimi: ")
 	palga=input("Siseta palgad: ")
-	with open("TextFile1.txt", "a") as inimesed:
+	with open("TextFile1.txt", "a") as inimesed:# Lisa inimene faili lõppu  lisame nimi failisse
 		inimesed.write(nimi+"\n")	
-	with open("TextFile2.txt", "a") as palgad:
+	with open("TextFile2.txt", "a") as palgad:# Lisame palk faili lõppu
 		palgad.write(palga+"\n")
 def delete_person ():
 	"""see funktsioon eemaldab nimekirjast isiku ja tema palga 
@@ -16,8 +16,8 @@ def delete_person ():
 		inimesed.append(stroka.strip())
 	f.close
 	nimi=input("Siseta nimi: ")
-	if nimi not in inimesed:
-		print("Soovite lisada nime ja palga/?")
+	if nimi not in inimesed: #kontrollitakse, kas on olemas selline inimene
+		print("Kas sa tahad lisada nime ja palga/?")kui inimene ei leitud registreeri oma
 		c=input("Y = jah, N = ei")
 		if c.upper=="Y":
 			add_person()

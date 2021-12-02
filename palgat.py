@@ -11,7 +11,7 @@ while True:
 		 bbb=keskmine(i,p)
 		 print(bbb)
 	elif a=="4":
-		aaa=suurim()
+		aaa=suurim(i,p)
 		print(aaa)
 	elif a=="5":
 		smallest_salary(a,b)
