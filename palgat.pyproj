@@ -27,9 +27,8 @@
     <Compile Include="palgat.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TextFile1.txt" />
-    <Content Include="TextFile2.txt" />
-    <Content Include="TextFile3.txt" />
+    <Content Include="Name.txt" />
+    <Content Include="Palka.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

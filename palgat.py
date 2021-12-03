@@ -2,7 +2,7 @@ from module1 import *
 p=loe_failist_listisse("TextFile2.txt")
 i=loe_failist_listisse("TextFile1.txt")
 while True:
-	a=input("Funktsioonid: Add users-1\n delete users-2\n keskmine-3\n suurim palk-4, min palk-5")
+	a=input("Funktsioonid: Add users-1\n delete users-2\n keskmine-3\n suurim palk-4,")
 	if a=="1":
 		add()
 	elif a=="2":

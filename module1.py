@@ -3,14 +3,14 @@ def add():
 	"""
 	nimi=input("Siseta nimi: ")
 	palga=input("Siseta palgad: ")
-	with open("TextFile1.txt", "a") as inimesed:# Lisa inimene faili lõppu  lisame nimi failisse
+	with open("Name.txt", "a") as inimesed:# Lisa inimene faili lõppu  lisame nimi failisse
 		inimesed.write(nimi+"\n")	
-	with open("TextFile2.txt", "a") as palgad:# Lisame palk faili lõppu
+	with open("Palka.txt", "a") as palgad:# Lisame palk faili lõppu
 		palgad.write(palga+"\n")
 def delete():
 	"""see funktsioon eemaldab nimekirjast isiku ja tema palga 
 	"""
-	f=open("TextFile1.txt", "r")
+	f=open("Name.txt", "r")
 	inimesed=[]
 	for stroka in f:
 		inimesed.append(stroka.strip())
@@ -25,17 +25,17 @@ def delete():
 			pass
 	else:
 		palgad=[]
-		with open("TextFile2.txt", "r") as f1:
+		with open("Palka.txt", "r") as f1:
 			for stro in f1:
 				palgad.append(stro.strip())
 		a=inimesed.index(nimi)#kui nimi on olemas, siis leidke indeks
 		inimesed.pop(a)#eemalda nimi
 		palgad.pop(a)#
-	f=open("TextFile1.txt", "w")
+	f=open("Name.txt", "w")
 	for g in inimesed:
 		f.write(g+"\n")
 	f.close()
-	d=open("TextFile2.txt", "w")
+	d=open("Palka.txt", "w")
 	for i in palgad:
 		d.write(i+"\n")
 	d.close()
@@ -71,4 +71,4 @@ def suurim(i:list,p:list):
     b=p.index(suurim)
     kellel=i[b]
     return suurim , kellel
-#Почему 3 и 4 не работает я сам не понимаю я 3 и 4 списал с доски но почему-то они не робят
+#Почему 4 и 5 не работает я сам не понимаю я 4 и 5 списал с доски но почему-то они не робят
