@@ -1,3 +1,5 @@
+global kesk
+global suurim
 def add():
 	"""see funktsioon lisab loendisse isiku nime ja palga
 	"""
@@ -40,35 +42,34 @@ def delete():
 		d.write(i+"\n")
 	d.close()
 def loe_failist_listisse(file:str)->list:
-    """Loeme tekst failist ja salvesta järjendisse
-    """
-    file=open(file,"r")
-    list_=[]
-    for stroka in file:
-        list_.append(stroka.strip())
-    file.close()
-    return list_ 
+	"""Loeme tekst failist ja salvesta järjendisse
+	"""
+	file=open(file,"r")
+	list_=[]
+	for stroka in file:
+		list_.append(stroka.strip())
+	file.close()
+	return list_ 
 def keskmine(i:list,p:list):
-    """Keskmise palka leidmine. Kui ta on loetelus, siis näiame kes saab seda kätte
-    :rtype var:
-    """
-    summa=0
-    for palga in p:
-        summa+=int(palga)
-    kesk=summa/len(p)
-    print(kesk)
-    if 0<=p.index(kesk)<len(p)-1:
-        kesk=i[p.index(kesk)]
-        return kesk
-    else:
-        kesk="Puudunud"
-        return kesk
+	"""Keskmise palka leidmine. Kui ta on loetelus, siis näiame kes saab seda kätte
+	:rtype var:
+	"""
+	summa=0
+	for palga in p:
+		summa+=int(palga)
+	kesk=summa/len(p)
+	print(kesk)
+	if 0<=p.index(kesk)<len(p)-1:
+		kesk=i[p.index(kesk)]
+		return kesk
+	else:
+		kesk="Puudunud"
+		return kesk
 def suurim(i:list,p:list):
-    """
-    :rtype: str,str:
-    """
-    suurim=max(p)
-    b=p.index(suurim)
-    kellel=i[b]
-    return suurim , kellel
-#Почему 4 и 5 не работает я сам не понимаю я 4 и 5 списал с доски но почему-то они не робят
+	"""
+	:rtype: str,str:
+	"""
+	suurim=max(p)
+	b=p.index(suurim)
+	kellel=i[b]
+	return suurim , kellel
