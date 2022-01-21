@@ -10,6 +10,13 @@ root=Tk()
 root.title("zatsonaja")
 root.geometry("1200x600")
 #Двигай батены и энтри через калоны и row
+#Основные конструкции изученные на курсе(условный оператор, циклы, списки/словари).      +
+#Стандартные функции.                                                                    + 
+#Пользовательские функции/процедуры созданные в своем модуле для храниения функций.      +
+#Переменные(глобальные, локальные)                                                       +-
+#Один из стандартных модулей (math, random,...).                                         -
+#Считывание информации из файла и запись в файл                                          +
+#Создать графическую оболочку для программ созданных на уроках ранее.                    -
 But1=Button(root,text="add()",font="Arial 15",relief="flat",width=10,height=3,bg="#fb00ff",command=lambda:add())
 But2=Button(root,text="delete()",font="Arial 15",relief="flat",width=10,height=3,bg="#fb00ff",command=lambda:delete())
 But3=Button(root,text="keskmine",font="Arial 15",relief="flat",width=10,height=3,bg="#fb00ff",command=lambda:keskmine(i,p))
