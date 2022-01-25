@@ -1,5 +1,17 @@
 global kesk
 global suurim
+def lists()->list:
+	"""Из файла делаем список/tegi listid failist
+	"""
+	palgad=[]
+	with open("palgad.txt", "r") as f1: #avame fail
+		for s in f1:
+			palgad.append(s.strip()) # tegi listid
+	inimesed=[]
+	with open ("inimesed.txt", "r") as inimene:
+		for q in inimene:
+			inimesed.append(q.strip())
+	return palgad,inimesed
 def add():
 	"""see funktsioon lisab loendisse isiku nime ja palga
 	"""
@@ -54,17 +66,18 @@ def keskmine(i:list,p:list):
 	"""Keskmise palka leidmine. Kui ta on loetelus, siis näiame kes saab seda kätte
 	:rtype var:
 	"""
-	summa=0
-	for palga in p:
-		summa+=int(palga)
-	kesk=summa/len(p)
-	print(kesk)
-	if 0<=p.index(kesk)<len(p)-1:
-		kesk=i[p.index(kesk)]
-		return kesk
-	else:
-		kesk="Puudunud"
-		return kesk
+	sum=0
+    for palk in p:
+        sum+=palk
+    keskm=sum/len(p)
+    print(keskm)
+    v=0
+    if 0<p.index(keskm)<len(p)-1:
+        kesk=i(p.index(keskm))
+        return keskm
+    else:
+        print("Нет средней зарплаты")
+        return keskm
 def suurim(i:list,p:list):
 	"""
 	:rtype: str,str:
@@ -72,4 +85,4 @@ def suurim(i:list,p:list):
 	suurim=max(p)
 	b=p.index(suurim)
 	kellel=i[b]
-	return suurim , kellel
+	return suurim,kellel
