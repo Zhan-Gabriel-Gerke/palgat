@@ -1,14 +1,14 @@
 global kesk
 global suurim
 def lists()->list:
-	"""Из файла делаем список/tegi listid failist
+	""" tegi listid failist
 	"""
 	palgad=[]
-	with open("palgad.txt", "r") as f1: #avame fail
+	with open("Palgad.txt", "r") as f1:
 		for s in f1:
-			palgad.append(s.strip()) # tegi listid
+			palgad.append(s.strip())
 	inimesed=[]
-	with open ("inimesed.txt", "r") as inimene:
+	with open ("Name.txt", "r") as inimene:
 		for q in inimene:
 			inimesed.append(q.strip())
 	return palgad,inimesed
@@ -17,9 +17,9 @@ def add():
 	"""
 	nimi=input("Siseta nimi: ")
 	palga=input("Siseta palgad: ")
-	with open("Name.txt", "a") as inimesed:# Lisa inimene faili lõppu  lisame nimi failisse
+	with open("Name.txt", "a") as inimesed:
 		inimesed.write(nimi+"\n")	
-	with open("Palka.txt", "a") as palgad:# Lisame palk faili lõppu
+	with open("Palka.txt", "a") as palgad:
 		palgad.write(palga+"\n")
 def delete():
 	"""see funktsioon eemaldab nimekirjast isiku ja tema palga 
@@ -30,8 +30,8 @@ def delete():
 		inimesed.append(stroka.strip())
 	f.close
 	nimi=input("Siseta nimi: ")
-	if nimi not in inimesed: #kontrollitakse, kas on olemas selline inimene
-		print("Kas sa tahad lisada nime ja palga/?")#kui inimene ei leitud registreeri oma
+	if nimi not in inimesed: 
+		print("Kas sa tahad lisada nime ja palga/?")
 		c=input("Y = jah, N = ei")
 		if c.upper=="Y":
 			add_person()
@@ -42,9 +42,9 @@ def delete():
 		with open("Palka.txt", "r") as f1:
 			for stro in f1:
 				palgad.append(stro.strip())
-		a=inimesed.index(nimi)#kui nimi on olemas, siis leidke indeks
-		inimesed.pop(a)#eemalda nimi
-		palgad.pop(a)#
+		a=inimesed.index(nimi)
+		inimesed.pop(a)
+		palgad.pop(a)
 	f=open("Name.txt", "w")
 	for g in inimesed:
 		f.write(g+"\n")
@@ -62,12 +62,13 @@ def loe_failist_listisse(file:str)->list:
 		list_.append(stroka.strip())
 	file.close()
 	return list_ 
-def keskmine(i:list,p:list):
-	"""Keskmise palka leidmine. Kui ta on loetelus, siis näiame kes saab seda kätte
-	:rtype var:
-	"""
-	sum=0
-    for palk in p:
+def keskmine():
+    """
+    Программа проверяет списки и выводит на экран среднюю зарплату
+    rtype var:int
+    """
+    sum=0
+    for palgad in p:
         sum+=palk
     keskm=sum/len(p)
     print(keskm)
@@ -82,7 +83,7 @@ def suurim(i:list,p:list):
 	"""
 	:rtype: str,str:
 	"""
-	suurim=max(p)
-	b=p.index(suurim)
-	kellel=i[b]
-	return suurim,kellel
+	palgad,inimesed=lists()
+	suurim=max(palgad)
+	b=palgad.index(suurim) 
+	print("kõike suured palga on "+inimesed[b]+" palga")
